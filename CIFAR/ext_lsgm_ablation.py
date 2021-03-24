@@ -193,9 +193,9 @@ def get_ood_scores(loader, layer_num, in_dist=False):
             from scipy.special import logsumexp
             scores = []
             for j in range(len(data)):
-                m = probs_test[1][j].reshape(-1, 1) + probs_test[2][j].reshape(1, -1)  # 对应相加
+                m = probs_test[1][j].reshape(-1, 1) + probs_test[2][j].reshape(1, -1) 
                 # m.shape == (k1, k2)
-                m += bigram[1]  # 乘转移概率
+                m += bigram[1]
 
                 # layer 2->3
                 for i in range(3, n_layers - 1):
