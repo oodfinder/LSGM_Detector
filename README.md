@@ -13,10 +13,10 @@ The code is tested under Ubuntu Linux 16.04 and Python 3.8 environment, and requ
 
 ## Out-of-Distribtion Datasets
 
-We use the following out-of-distributin datasets, we provide the links here:
+Some out-of-distributin datasets we use are from torchvision, and the links of the others are provided here:
 
-* [Tiny-ImageNet (resize)](https://www.dropbox.com/s/kp3my3412u5k9rl/Imagenet_resize.tar.gz)
-* [LSUN (resize)](https://www.dropbox.com/s/moqh2wh8696c3yl/LSUN_resize.tar.gz)
+* [Tiny-ImageNet](https://www.dropbox.com/s/kp3my3412u5k9rl/Imagenet_resize.tar.gz)
+* [LSUN](https://www.dropbox.com/s/moqh2wh8696c3yl/LSUN_resize.tar.gz)
 * [Textures](https://www.robots.ox.ac.uk/~vgg/data/dtd/)
 * [iSUN](https://www.dropbox.com/s/ssz7qxfqae0cca5/iSUN.tar.gz)
 
@@ -24,11 +24,12 @@ We use the following out-of-distributin datasets, we provide the links here:
 
 ```bash
 # model: DenseNet, in-distribution: CIFAR-100, batch_size: 200
-python test_lsgm.py --method_name densenet_cifar100 --test_bs 200
+$ cd CIFAR
+$ python test_lsgm.py --method_name densenet_cifar100 --test_bs 200
 ```
 
 ## Experimental Result
 
 This followings are the experimental results, which is the same as in the paper.
 
- ![image](./result.png)
+![image](./result.png)
