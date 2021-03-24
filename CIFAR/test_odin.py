@@ -37,7 +37,7 @@ parser.add_argument('--method_name', '-m', type=str, default='resnet_cifar10', h
 parser.add_argument('--layers', default=40, type=int, help='total number of layers')
 parser.add_argument('--widen-factor', default=2, type=int, help='widen factor')
 parser.add_argument('--droprate', default=0.3, type=float, help='dropout probability')
-parser.add_argument('--load', '-l', type=str, default='/data/share/ood_datasets/Mahalanobis/pre_trained', help='Checkpoint path to resume / test.')
+parser.add_argument('--load', '-l', type=str, default='./pre_trained', help='Checkpoint path to resume / test.')
 parser.add_argument('--ngpu', type=int, default=1, help='0 = CPU.')
 parser.add_argument('--prefetch', type=int, default=4, help='Pre-fetching threads.')
 args = parser.parse_args()
