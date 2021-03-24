@@ -234,27 +234,6 @@ ood_loader = torch.utils.data.DataLoader(ood_data, batch_size=args.test_bs, shuf
 print('\n\nTexture Detection')
 get_and_print_results(ood_loader)
 
-# /////////////// SVHN ///////////////
-
-ood_data = svhn.SVHN(root='/data/share/ood_datasets/svhn/', split="test",
-                     transform=trn.Compose([trn.Resize(64), trn.ToTensor(), trn.Normalize(mean, std)]), download=False)
-ood_loader = torch.utils.data.DataLoader(ood_data, batch_size=args.test_bs, shuffle=True,
-                                         num_workers=args.prefetch, pin_memory=True)
-
-print('\n\nSVHN Detection')
-get_and_print_results(ood_loader)
-
-# /////////////// Places365 ///////////////
-
-ood_data = dset.ImageFolder(root="/data/share/ood_datasets/places365/test_subset",
-                            transform=trn.Compose([trn.Resize(64), trn.CenterCrop(64),
-                                                   trn.ToTensor(), trn.Normalize(mean, std)]))
-ood_loader = torch.utils.data.DataLoader(ood_data, batch_size=args.test_bs, shuffle=True,
-                                         num_workers=args.prefetch, pin_memory=True)
-
-print('\n\nPlaces365 Detection')
-get_and_print_results(ood_loader)
-
 # /////////////// LSUN ///////////////
 
 ood_data = lsun_loader.LSUN("/data/share/ood_datasets/lsun/data", classes='test',
